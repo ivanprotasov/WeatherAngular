@@ -4,17 +4,20 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { HomeComponent } from './home.component.ts';
+import {WeatherService} from "../services/weather.service";
+import {DefaultTableComponent} from "../components/default-table/default-table.component";
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    DefaultTableComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [WeatherService],
   bootstrap: [HomeComponent]
 })
 export class HomeModule { }
