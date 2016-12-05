@@ -1,12 +1,12 @@
 <table>
     <thead>
-        <tr>
-            <td>123</td>
-        </tr>
+    <tr>
+        <th *ngFor="let title of tableHead">{{title}}</th>
+    </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>123</td>
-        </tr>
+    <tr *ngFor="let row of tableBody">
+        <td *ngFor="let cell of row">{{cell}}</td>
+    </tr>
     </tbody>
 </table>

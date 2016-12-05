@@ -1,11 +1,3 @@
-body {
-  font-family: "Ubuntu", Tahoma, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.42857143;
-  color: #333333;
-  background-color: #ffffff;
-}
-
 table {
   width: 100%;
   max-width: 100%;
@@ -30,12 +22,12 @@ table {
   }
 
   th:first-child,
-  td:first-child{
+  td:first-child {
     width: 10px;
   }
 
   th:nth-child(2),
-  td:nth-child(2){
+  td:nth-child(2) {
     min-width: 200px;
   }
 

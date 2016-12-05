@@ -1,9 +1,40 @@
-<div class="bs-docs-header">
-  <div class="container">
-    <h1>Awesome weather app</h1>
-  </div>
+<div class='bs-docs-header'>
+    <div class='container'>
+        <h1>Awesome weather app</h1>
+    </div>
 </div>
-<div id='weather-table'>{{allWeather}}</div>
-<default-table></default-table>
-<div id='weather-pagination' class='align-center'></div>
-<div id='weather-map'></div>
+<nav class="navbar navbar-light bg-faded">
+    <ul class="nav navbar-nav">
+        <li class="nav-item active">
+            <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Edit</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Contacts</a>
+        </li>
+    </ul>
+</nav>
+
+<default-table
+        [tableHead]='weatherHead'
+        [tableBody]='splittedTableBody'>
+</default-table>
+<div class='align-center'>
+    <pagination
+            *ngIf='weatherBody'
+            [paginationData]='weatherBody'
+            [n]='10'
+            (onPageChange)='tableDataChange($event)'>
+    </pagination>
+</div>
+<div *ngIf='!weatherBody'>Data Loading...</div>
+<sebm-google-map [latitude]="lat" [longitude]="lng">
+    <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
+</sebm-google-map>
+<div class='bs-docs-footer'>
+    <div class='container'>
+        <h5>© 2016 by Ivan Pratasau</h5>
+    </div>
+</div>

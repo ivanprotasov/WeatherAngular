@@ -1,0 +1,14 @@
+<ul class="pagination">
+    <li>
+        <a class='pagination-prev' (click)="prevPage($event)" href="#">«</a>
+    </li>
+    <li *ngFor='let number of parts' [ngClass]='setActive(number)'>
+        <a class='pagination-number'
+           (click)='changPage($event)'
+           href="#">{{number}}
+        </a>
+    </li>
+    <li>
+        <a class='pagination-next' (click)="nextPage($event)" href="#">»</a>
+    </li>
+</ul>
