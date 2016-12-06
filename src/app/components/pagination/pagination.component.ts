@@ -23,11 +23,12 @@ export class PaginationComponent {
         });
         this.parts = arr;
         this.splittedData = this.splitData();
+        console.log(this.splittedData);
         this.onPageChange.emit(this.splittedData[this.selectedPart]);
     }
 
-    changPage($event) {
-        this.selectedPart = $event.target.innerHTML - 1;
+    changePage(number) {
+        this.selectedPart = number - 1;
         this.onPageChange.emit(this.splittedData[this.selectedPart]);
     }
 
