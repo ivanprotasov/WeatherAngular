@@ -9,5 +9,6 @@ import { PaginationComponent } from './pagination.component.ts';
     imports: [BrowserModule],
     bootstrap: [PaginationComponent]
 })
+
 export class PaginationModule {
 }

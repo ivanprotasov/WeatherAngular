@@ -46,9 +46,6 @@
       "single"
     ],
     "radix": true,
-
-    "directive-selector-prefix": [true, "app"],
-    "component-selector-prefix": [true, "app"],
     "class-name": true,
     "comment-format": [true, "check-space"],
     "indent": [true, "spaces"],

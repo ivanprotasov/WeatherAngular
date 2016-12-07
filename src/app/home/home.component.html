@@ -17,19 +17,11 @@
     </ul>
 </nav>
 
-<default-table
-        [tableHead]='weatherHead'
-        [tableBody]='splittedTableBody'>
-</default-table>
-<div class='align-center'>
-    <pagination
-            *ngIf='weatherBody'
-            [paginationData]='weatherBody'
-            [n]='10'
-            (onPageChange)='tableDataChange($event)'>
-    </pagination>
-</div>
-<div *ngIf='!weatherBody'>Data Loading...</div>
+<weather-table
+        [lat]='lat'
+        [lng]='lng'>
+</weather-table>
+
 <sebm-google-map [latitude]="lat" [longitude]="lng">
     <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
 </sebm-google-map>

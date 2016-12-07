@@ -10,14 +10,11 @@ export class WeatherService {
     constructor(private http: Http) {
     }
 
-    getWeather(position): Promise <AllWeather> {
+    getWeather(lat, lng): Promise <AllWeather> {
         let url: string;
-        if (position === '') {
-             url = 'http://api.openweathermap.org/data/2.5/find?lat=53.9&lon=27.5667&cnt=50&APPID=3801414355a652393fc513e2ceef2156';
-        } else {
-             // url = 'http://api.openweathermap.org/data/2.5/find?lat=' + position.coords.latitude + '&lon=' + position.coords.longitude + '&cnt=50&APPID=3801414355a652393fc513e2ceef2156';
-            url = './../data/test.json';
-        }
+
+         url = 'http://api.openweathermap.org/data/2.5/find?lat=' + lat + '&lon=' + lng + '&cnt=50&APPID=3801414355a652393fc513e2ceef2156';
+        //url = './../data/test.json';
 
         return this.http.get(url).toPromise().then(response => response.json()).catch(this.handleError);
     }

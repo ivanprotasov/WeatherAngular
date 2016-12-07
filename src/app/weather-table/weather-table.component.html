@@ -1,0 +1,45 @@
+<div *ngIf="!(allWeather||dataError)"  class = "loading">
+    <div class="cssload-dots">
+        <div class="cssload-dot"></div>
+        <div class="cssload-dot"></div>
+        <div class="cssload-dot"></div>
+        <div class="cssload-dot"></div>
+        <div class="cssload-dot"></div>
+    </div>
+
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="12" ></feGaussianBlur>
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0	0 1 0 0 0	0 0 1 0 0	0 0 0 18 -7" result="goo" ></feColorMatrix>
+                <!--<feBlend in2="goo" in="SourceGraphic" result="mix" ></feBlend>-->
+            </filter>
+        </defs>
+    </svg>
+</div>
+<div *ngIf="allWeather">
+    <table>
+        <thead>
+        <tr>
+            <th *ngFor="let title of weatherTableHeadData">{{title}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let row of weatherTableBodyData">
+            <td *ngFor="let cell of row">{{cell}}</td>
+        </tr>
+        </tbody>
+    </table>
+    <div class='align-center'>
+        <pagination
+                *ngIf='weatherFullBodyData'
+                [amount]='amount'
+                [n]='elemsInTable'
+                (onPageChange)='tableDataChange($event)'>
+        </pagination>
+    </div>
+</div>
+<div *ngIf="dataError">
+    <h3>Data was rejected with this body:</h3>
+    {{dataError | json}}
+</div>

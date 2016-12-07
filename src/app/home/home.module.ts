@@ -4,15 +4,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { HomeComponent } from './home.component.ts';
-import {WeatherService} from "../services/weather.service";
-import {DefaultTableComponent} from "../components/default-table/default-table.component";
-import {PaginationComponent} from "../components/pagination/pagination.component";
-import {AgmCoreModule} from "angular2-google-maps/core/core-module";
+import { WeatherService } from '../services/weather.service';
+import { WeatherTableComponent } from '../weather-table/weather-table.component';
+import { PaginationComponent } from '../components/pagination/pagination.component';
+import { AgmCoreModule } from 'angular2-google-maps/core/core-module';
 
 @NgModule({
     declarations: [
         HomeComponent,
-        DefaultTableComponent,
+        WeatherTableComponent,
         PaginationComponent
     ],
     imports: [

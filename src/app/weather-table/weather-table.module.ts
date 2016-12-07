@@ -1,13 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { DefaultTableComponent } from './default-table.component.ts';
+import { WeatherTableComponent } from './weather-table.component.ts';
 
 @NgModule({
     declarations: [
-        DefaultTableComponent
+        WeatherTableComponent
     ],
     imports: [BrowserModule],
-    bootstrap: [DefaultTableComponent]
+    bootstrap: [WeatherTableComponent]
 })
-export class DefaultTableModule {
+export class WeatherTableModule {
 }
