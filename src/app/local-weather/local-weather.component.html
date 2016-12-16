@@ -1,0 +1,13 @@
+<weather-table *ngIf='lat'
+        [lat]='lat | number:"1.0-3"'
+        [lng]='lng | number:"1.0-3"'>
+</weather-table>
+
+<sebm-google-map [latitude]="lat" [longitude]="lng">
+    <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
+</sebm-google-map>
+<div class='bs-docs-footer'>
+    <div class='container'>
+        <h5>© 2016 by Ivan Pratasau</h5>
+    </div>
+</div>

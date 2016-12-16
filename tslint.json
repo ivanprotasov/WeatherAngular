@@ -53,7 +53,6 @@
     "no-eval": true,
     "no-any": true,
     "no-internal-module": true,
-    "no-trailing-whitespace": true,
     "no-var-keyword": true,
     "one-line": [true, "check-open-brace", "check-whitespace"],
     "semicolon": false,

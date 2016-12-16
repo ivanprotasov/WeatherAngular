@@ -1,9 +1,9 @@
 import MainWeather from './main-weather'
 
-interface SityWeather {
+interface CityWeather {
     id: number,
     name: string,
     main: MainWeather
 }
 
-export default SityWeather
+export default CityWeather

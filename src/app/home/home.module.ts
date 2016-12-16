@@ -2,26 +2,32 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { RouterModule, Routes } from '@angular/router';
 
-import { HomeComponent } from './home.component.ts';
+import { LocalWeatherComponent } from '../local-weather/local-weather.component';
 import { WeatherService } from '../services/weather.service';
-import { WeatherTableComponent } from '../weather-table/weather-table.component';
-import { PaginationComponent } from '../components/pagination/pagination.component';
-import { AgmCoreModule } from 'angular2-google-maps/core/core-module';
+import { HomeComponent } from './home.component';
+import { LocalWeatherModule } from '../local-weather/local-weather.module';
+import { UserWeatherComponent } from '../user-weather/user-weather.component';
+import { UserWeatherModule } from '../user-weather/user-weather.module';
+
+const appRoutes: Routes = [
+    { path: 'local-weather', component: LocalWeatherComponent },
+    { path: 'user-weather', component: UserWeatherComponent },
+    { path: '', component: LocalWeatherComponent }
+];
 
 @NgModule({
     declarations: [
-        HomeComponent,
-        WeatherTableComponent,
-        PaginationComponent
+        HomeComponent
     ],
     imports: [
         BrowserModule,
         FormsModule,
         HttpModule,
-        AgmCoreModule.forRoot({
-            apiKey: 'AIzaSyCzIWs6WyuDa3RTMqAIE7KFS6j_51mAFwk'
-        })
+        RouterModule.forRoot(appRoutes),
+        LocalWeatherModule,
+        UserWeatherModule
     ],
     providers: [WeatherService],
     bootstrap: [HomeComponent]

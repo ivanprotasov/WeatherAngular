@@ -1,4 +1,5 @@
 <div *ngIf="!(allWeather||dataError)"  class = "loading">
+    <h6>Please, wait for weather data</h6>
     <div class="cssload-dots">
         <div class="cssload-dot"></div>
         <div class="cssload-dot"></div>
@@ -18,7 +19,7 @@
     </svg>
 </div>
 <div *ngIf="allWeather">
-    <table>
+    <table class="weatherTable">
         <thead>
         <tr>
             <th *ngFor="let title of weatherTableHeadData">{{title}}</th>
@@ -26,7 +27,9 @@
         </thead>
         <tbody>
         <tr *ngFor="let row of weatherTableBodyData">
-            <td *ngFor="let cell of row">{{cell}}</td>
+            <td *ngFor="let cell of row">
+                {{cell}}
+            </td>
         </tr>
         </tbody>
     </table>

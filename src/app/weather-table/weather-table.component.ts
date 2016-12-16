@@ -4,8 +4,7 @@ import AllWeather from '../interfaces/weather/all-weather';
 
 @Component({
     selector: 'weather-table',
-    templateUrl: './weather-table.component.html',
-    styleUrls: ['./weather-table.component.scss']
+    templateUrl: './weather-table.component.html'
 })
 export class WeatherTableComponent implements OnInit {
     @Input() lat: number;
@@ -24,7 +23,6 @@ export class WeatherTableComponent implements OnInit {
     constructor(private weatherService: WeatherService) {
     }
 
-
     private updateTable() {
         this.weatherTableBodyData = this.weatherFullBodyData.slice(this.showFrom, this.showBefore);
     }
@@ -33,7 +31,7 @@ export class WeatherTableComponent implements OnInit {
         this.weatherService.getWeather(this.lat, this.lng).then((allWeather) => {
             this.requestResolved = true;
             this.showBefore = this.elemsInTable;
-            this.allWeather = allWeather as AllWeather;
+            this.allWeather = allWeather;
             this.weatherTableHeadData = this.weatherService.prepareWeatherHeaderData(this.allWeather);
             this.weatherFullBodyData = this.weatherService.prepareWeatherBodyData(this.allWeather);
             this.amount = this.weatherFullBodyData.length;

@@ -1,7 +1,7 @@
-import SityWeather from './sity-weather'
+import CityWeather from './city-weather'
 
 interface AllWeather {
-    list: Array<SityWeather>;
+    list: Array<CityWeather>;
 }
 
 export default AllWeather
