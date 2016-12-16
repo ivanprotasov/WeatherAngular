@@ -37,8 +37,8 @@ export class WeatherService {
                 if (main.hasOwnProperty(key)) {
                     let valueParam: string = String(main[key]);
                     if (key.indexOf('temp') >= 0) {
-                        let celsiusToFahrenheitPipe = new KelvinToCelsiusPipe();
-                        valueParam = celsiusToFahrenheitPipe.transform(+valueParam)+'';
+                        let kelvinToCelsiusPipe = new KelvinToCelsiusPipe();
+                        valueParam = kelvinToCelsiusPipe.transform(+valueParam)+'';
                     }
                     rowData.push(valueParam);
                 }

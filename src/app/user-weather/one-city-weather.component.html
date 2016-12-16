@@ -7,7 +7,7 @@
         </ng-container>
     </td>
     <td>
-        {{cityWeather.main.temp | kelvinToCelsius}} °C
+        {{cityWeather.main.temp | kelvinToCelsius | number:'1.0-3'}} °C
     </td>
     <td>
         {{cityWeather.main.pressure}}
