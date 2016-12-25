@@ -1,0 +1,37 @@
+<template [ngIf]="city">
+    <td class="favorite">
+        <span *ngIf="favorite" (click)="toggleFavorite()">&#9733;</span>
+        <span *ngIf="!favorite" (click)="toggleFavorite()">&#9734;</span>
+    </td>
+    <td>{{city.name}}</td>
+    <td>
+        <ng-container *ngFor="let weather of city.weather">
+            {{weather.main}}
+            <img src="{{'http://openweathermap.org/img/w/'+ weather.icon + '.png'}}" alt="">
+        </ng-container>
+    </td>
+    <td>
+        {{city.main.temp | kelvinToCelsius | number:'1.0-0'}} °C
+    </td>
+    <td>
+        {{city.main.pressure}}
+    </td>
+    <td>
+        {{city.main.humidity}}
+    </td>
+    <td>
+        {{city.visibility}}
+    </td>
+    <td>
+        {{city.wind.speed}}
+    </td>
+    <td>
+        {{city.sys.sunrise*1000 | date:'H:mm:ss'}}
+    </td>
+    <td>
+        {{city.sys.sunset*1000 | date:'H:mm:ss'}}
+    </td>
+    <td>
+        <a class="remove" (click)="remove()">remove</a>
+    </td>
+</template>

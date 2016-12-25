@@ -1,3 +1,16 @@
 th, td {
   text-align: center;
 }
+
+.favorite span{
+  font-size: 22px;
+  color: orange;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a.remove {
+  color: #0275d8;
+  text-decoration: none;
+  cursor: pointer;
+}

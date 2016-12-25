@@ -1,0 +1,23 @@
+<table>
+    <thead *ngIf="cities.size">
+        <tr>
+            <th></th>
+            <th>City</th>
+            <th>Weather</th>
+            <th>Temperature</th>
+            <th>Pressure</th>
+            <th>Humidity</th>
+            <th>Visibility</th>
+            <th>Wind speed</th>
+            <th>Sunrise</th>
+            <th>Sunset</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="vertical-align" oneCityWeather *ngFor="let cityData of cities.toJS(); let i=index" [city]="cityData.city" [favorite]="cityData.favorite"
+            (onToggleFavorite)='toggleFavorite($event)'
+            (onRemove)='remove($event)'
+            [index]="i"></tr>
+    </tbody>
+</table>

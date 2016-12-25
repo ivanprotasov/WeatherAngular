@@ -15,7 +15,7 @@ export class LocalWeatherComponent implements OnInit {
     ngOnInit() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition((position) => {
-                let decimalPipe = new DecimalPipe('');
+                let decimalPipe = new DecimalPipe('en');
                 const DECIMAL_PATTERN = '1.0-3';
                 this.lat = +decimalPipe.transform(position.coords.latitude, DECIMAL_PATTERN);
                 this.lng = +decimalPipe.transform(position.coords.longitude, DECIMAL_PATTERN);

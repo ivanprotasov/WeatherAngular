@@ -1,25 +1,9 @@
 <div class="alert alert-warning">
     <span>Please, input a city:</span>
     <input type="text" #box >
-    <button (click)="clicked(box.value)">OK</button>
+    <button (click)="addItem(box.value)">OK</button>
 </div>
-    <table>
-        <thead *ngIf="cities.length">
-            <tr>
-                <th>City</th>
-                <th>Weather</th>
-                <th>Temperature</th>
-                <th>Pressure</th>
-                <th>Humidity</th>
-                <th>Visibility</th>
-                <th>Wind speed</th>
-                <th>Sunrise</th>
-                <th>Sunset</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="vertical-align" oneCityWeather *ngFor="let city of (cities | cityWeather)" [city]="city.name" [cityWeather]="city.promise | async"></tr>
-        </tbody>
-    </table>
-
-
+<userWeatherTable  [cities]="cities"
+                   (onToggleFavorite)="toggleFavorite($event)"
+                   (onRemove)="removeItem($event)"
+></userWeatherTable>

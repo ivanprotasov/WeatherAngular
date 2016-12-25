@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { WeatherTableComponent } from './weather-table.component.ts';
+import { WeatherTableComponent } from './weather-table.component';
 
 @NgModule({
     declarations: [
