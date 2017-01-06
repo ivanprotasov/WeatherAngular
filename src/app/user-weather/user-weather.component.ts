@@ -1,8 +1,9 @@
 import * as Immutable from 'immutable';
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ChangeDetectorRef} from '@angular/core';
 import { LocalStorageService } from '../services/local-storage.service';
 import { List } from 'immutable';
 import { UserWeatherService } from '../services/user-weather.service';
+import {setTimeout} from "timers";
 
 
 @Component({
@@ -12,12 +13,16 @@ import { UserWeatherService } from '../services/user-weather.service';
 
 export class UserWeatherComponent  implements OnInit {
     cities: List<any>;
+    lastUpdate: Date;
 
     constructor(private localStorageService: LocalStorageService,
                 private userWeatherService: UserWeatherService){}
 
-    ngOnInit() {
+    ngOnInit(){
         this.cities = Immutable.List(this.localStorageService.getItem('cities') || []) as List<{}>;
+        setInterval(() => {
+            this.lastUpdate = new Date();
+        }, 100)
     }
 
     toggleFavorite($event){
@@ -43,5 +48,9 @@ export class UserWeatherComponent  implements OnInit {
     removeItem($event){
         this.cities = this.cities.delete($event);
         this.localStorageService.setItem('cities', this.cities.toJS());
+    }
+    
+    updateWeather() {
+        console.log(this.cities.toJS());
     }
 }
