@@ -3,7 +3,6 @@ import {Component, OnInit, ChangeDetectorRef} from '@angular/core';
 import { LocalStorageService } from '../services/local-storage.service';
 import { List } from 'immutable';
 import { UserWeatherService } from '../services/user-weather.service';
-import {setTimeout} from "timers";
 
 
 @Component({
@@ -20,8 +19,9 @@ export class UserWeatherComponent  implements OnInit {
 
     ngOnInit(){
         this.cities = Immutable.List(this.localStorageService.getItem('cities') || []) as List<{}>;
+        this.lastUpdate = new Date();
         setInterval(() => {
-            this.lastUpdate = new Date();
+            this.lastUpdate = new Date()
         }, 100)
     }
 

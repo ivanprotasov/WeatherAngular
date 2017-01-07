@@ -2,7 +2,7 @@
     <span>Please, input a city:</span>
     <input type="text" #box >
     <button (click)="addItem(box.value)">OK</button>
-    <span>Last Updated:</span><span>{{lastUpdate | date : 'yyyy-MM-dd HH:mm:ssZ'}}</span>
+    <lastUpdate [lastUpdate]="lastUpdate"></lastUpdate>
 </div>
 <userWeatherTable  [cities]="cities"
                    (onToggleFavorite)="toggleFavorite($event)"
