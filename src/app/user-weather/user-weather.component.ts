@@ -20,9 +20,9 @@ export class UserWeatherComponent  implements OnInit {
     ngOnInit(){
         this.cities = Immutable.List(this.localStorageService.getItem('cities') || []) as List<{}>;
         this.lastUpdate = new Date();
-        setInterval(() => {
-            this.lastUpdate = new Date()
-        }, 100)
+        // setInterval(() => {
+        //     this.lastUpdate = new Date()
+        // }, 100)
     }
 
     toggleFavorite($event){

@@ -10,15 +10,16 @@ export class LastUpdateComponent {
     milliseconds : number;
 
     constructor(private ref: ChangeDetectorRef) {
-        ref.detach();
-        setInterval(() => {
-            this.ref.reattach();
-            this.ref.detectChanges();
-            this.ref.detach();
-        }, 5000);
+        // ref.detach();
+        // setInterval(() => {
+        //     this.ref.reattach();
+        //     this.ref.detectChanges();
+        //     this.ref.detach();
+        // }, 5000);
     }
 
     ngOnChanges() {
+
         this.milliseconds = this.lastUpdate.getMilliseconds();
     }
 }
