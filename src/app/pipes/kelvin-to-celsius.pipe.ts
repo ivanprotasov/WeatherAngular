@@ -6,6 +6,6 @@ export class KelvinToCelsiusPipe implements PipeTransform {
         if (!value) {
             return value
         }
-        return value - 273.15;
+        return Math.round(value - 273.15);
     }
 }

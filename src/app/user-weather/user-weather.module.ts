@@ -8,8 +8,8 @@ import { UserAllWeatherService } from '../services/user-all-weather.service';
 import { LocalStorageService } from '../services/local-storage.service';
 import { UserWeatherTableComponent } from './user-weather-table/user-weather-table.component';
 import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome'
-import {LastUpdateComponent} from "./last-update/last-update.component";
-
+import { LastUpdateComponent } from './last-update/last-update.component';
+import { ColorDetector } from '../directives/color-detector.directive';
 
 @NgModule({
     declarations: [
@@ -17,7 +17,8 @@ import {LastUpdateComponent} from "./last-update/last-update.component";
         OneCityWeatherComponent,
         UserWeatherTableComponent,
         LastUpdateComponent,
-        KelvinToCelsiusPipe
+        KelvinToCelsiusPipe,
+        ColorDetector
     ],
     imports: [
         BrowserModule,

@@ -17,7 +17,9 @@
     <tbody>
         <tr class="vertical-align" oneCityWeather *ngFor="let cityData of cities.toJS(); let i=index" [city]="cityData.city" [favorite]="cityData.favorite"
             (onToggleFavorite)='toggleFavorite($event)'
-            (onRemove)='remove($event)'
-            [index]="i"></tr>
+            (onRemove)="remove($event)"
+            [index]="i"
+            [colorDetector]="cityData.city.main.temp | kelvinToCelsius"
+        ></tr>
     </tbody>
 </table>

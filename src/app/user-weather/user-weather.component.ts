@@ -1,5 +1,5 @@
 import * as Immutable from 'immutable';
-import {Component, OnInit, ChangeDetectorRef} from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
 import { LocalStorageService } from '../services/local-storage.service';
 import { List } from 'immutable';
 import { UserWeatherService } from '../services/user-weather.service';
@@ -29,9 +29,9 @@ export class UserWeatherComponent  implements OnInit {
         let index = this.cities.findKey(function (item) {
             return item.city.name === $event.city
         });
-        let cityData = this.cities.get(index);
-        cityData.favorite = $event.favorite;
-        this.cities.set(index, cityData);
+        this.cities.update(index, function (item) {
+            return item.favorite = $event.favorite;
+        });
         this.localStorageService.setItem('cities', this.cities.toJS());
     }
 
@@ -48,9 +48,5 @@ export class UserWeatherComponent  implements OnInit {
     removeItem($event){
         this.cities = this.cities.delete($event);
         this.localStorageService.setItem('cities', this.cities.toJS());
-    }
-    
-    updateWeather() {
-        console.log(this.cities.toJS());
     }
 }
