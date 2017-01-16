@@ -10,6 +10,7 @@ import { UserWeatherTableComponent } from './user-weather-table/user-weather-tab
 import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome'
 import { LastUpdateComponent } from './last-update/last-update.component';
 import { ColorDetector } from '../directives/color-detector.directive';
+import { WindDirectionPresenter } from '../directives/wind-direction-presenter.directive';
 
 @NgModule({
     declarations: [
@@ -18,7 +19,8 @@ import { ColorDetector } from '../directives/color-detector.directive';
         UserWeatherTableComponent,
         LastUpdateComponent,
         KelvinToCelsiusPipe,
-        ColorDetector
+        ColorDetector,
+        WindDirectionPresenter
     ],
     imports: [
         BrowserModule,

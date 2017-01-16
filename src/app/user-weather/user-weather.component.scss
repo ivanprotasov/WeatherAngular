@@ -14,3 +14,26 @@ a.remove {
   text-decoration: none;
   cursor: pointer;
 }
+
+.wind-speed {
+  position: relative;
+  top: -9px;
+}
+
+.wind-rose {
+  background-image: url("../../img/wind-rose.png");
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+}
+
+.wind-direction {
+  background-image: url(../../img/direction-arrow.png);
+  background-size: cover;
+  width: 6px;
+  height: 29px;
+  display: inline-block;
+  margin-top: 7px;
+}
+

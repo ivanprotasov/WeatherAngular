@@ -8,7 +8,27 @@
     <td>
         <ng-container *ngFor="let weather of city.weather">
             {{weather.main}}
-            <img src="{{'http://openweathermap.org/img/w/'+ weather.icon + '.png'}}" alt="">
+            <!--<img src="{{'http://openweathermap.org/img/w/'+ weather.icon + '.png'}}" alt="">-->
+            <span [ngSwitch]="weather.icon">
+                <img *ngSwitchCase="'01d'" src="http://openweathermap.org/img/w/01d.png" alt="">
+                <img *ngSwitchCase="'02d'" src="http://openweathermap.org/img/w/02d.png" alt="">
+                <img *ngSwitchCase="'03d'" src="http://openweathermap.org/img/w/03d.png" alt="">
+                <img *ngSwitchCase="'04d'" src="http://openweathermap.org/img/w/04d.png" alt="">
+                <img *ngSwitchCase="'09d'" src="http://openweathermap.org/img/w/09d.png" alt="">
+                <img *ngSwitchCase="'10d'" src="http://openweathermap.org/img/w/10d.png" alt="">
+                <img *ngSwitchCase="'11d'" src="http://openweathermap.org/img/w/11d.png" alt="">
+                <img *ngSwitchCase="'13d'" src="http://openweathermap.org/img/w/13d.png" alt="">
+                <img *ngSwitchCase="'50d'" src="http://openweathermap.org/img/w/50d.png" alt="">
+                <img *ngSwitchCase="'01n'" src="http://openweathermap.org/img/w/01n.png" alt="">
+                <img *ngSwitchCase="'02n'" src="http://openweathermap.org/img/w/02n.png" alt="">
+                <img *ngSwitchCase="'03n'" src="http://openweathermap.org/img/w/03n.png" alt="">
+                <img *ngSwitchCase="'04n'" src="http://openweathermap.org/img/w/04n.png" alt="">
+                <img *ngSwitchCase="'09n'" src="http://openweathermap.org/img/w/09n.png" alt="">
+                <img *ngSwitchCase="'10n'" src="http://openweathermap.org/img/w/10n.png" alt="">
+                <img *ngSwitchCase="'11n'" src="http://openweathermap.org/img/w/11n.png" alt="">
+                <img *ngSwitchCase="'13n'" src="http://openweathermap.org/img/w/13n.png" alt="">
+                <img *ngSwitchCase="'50n'" src="http://openweathermap.org/img/w/50n.png" alt="">
+            </span>
         </ng-container>
     </td>
     <td>
@@ -24,7 +44,10 @@
         {{city.visibility}}
     </td>
     <td>
-        {{city.wind.speed}}
+        <span class="wind-speed">{{city.wind.speed}}</span>
+        <span class="wind-rose">
+            <span class="wind-direction" [windDirectionPresenter]="city.wind.deg"></span>
+        </span>
     </td>
     <td>
         {{city.sys.sunrise*1000 | date:'H:mm:ss'}}
