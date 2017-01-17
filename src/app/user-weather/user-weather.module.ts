@@ -11,6 +11,7 @@ import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawe
 import { LastUpdateComponent } from './last-update/last-update.component';
 import { ColorDetector } from '../directives/color-detector.directive';
 import { WindDirectionPresenter } from '../directives/wind-direction-presenter.directive';
+import { FavoriteCity } from '../directives/favorite-city.derective';
 
 @NgModule({
     declarations: [
@@ -20,7 +21,8 @@ import { WindDirectionPresenter } from '../directives/wind-direction-presenter.d
         LastUpdateComponent,
         KelvinToCelsiusPipe,
         ColorDetector,
-        WindDirectionPresenter
+        WindDirectionPresenter,
+        FavoriteCity
     ],
     imports: [
         BrowserModule,

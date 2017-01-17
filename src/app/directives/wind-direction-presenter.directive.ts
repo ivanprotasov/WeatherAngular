@@ -9,7 +9,7 @@ export class WindDirectionPresenter {
 
     constructor (private el: ElementRef) {}
 
-    ngOnInit(){
+    ngOnChanges(){
         this.el.nativeElement.style.transform = `rotate(${this.direction}deg)`
     }
 

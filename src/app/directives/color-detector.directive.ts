@@ -8,17 +8,18 @@ export class ColorDetector {
 
   constructor (private el: ElementRef) {}
 
-  ngOnInit(){
+  ngOnChanges(){
     let temperature = this.temperature,
-        saturation;
+        saturation,
+        nativeEl = this.el.nativeElement;
     if (temperature < 0) {
       saturation = 100 + temperature*2;
       saturation = (saturation > 0) ? saturation : 0;
-      this.el.nativeElement.style.backgroundColor = `hsl(190, 100%, ${saturation}%)`
+      nativeEl.style.backgroundColor = `hsl(190, 100%, ${saturation}%)`
     } else {
       saturation = 100 - temperature*2;
       saturation = (saturation > 0) ? saturation : 0;
-      this.el.nativeElement.style.backgroundColor = `hsl(15, 100%, ${saturation}%)`
+      nativeEl.style.backgroundColor = `hsl(15, 100%, ${saturation}%)`
     }
   }
 
