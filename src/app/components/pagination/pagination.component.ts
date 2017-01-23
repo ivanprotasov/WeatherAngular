@@ -1,4 +1,5 @@
-import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
+import { Component, Input, Output, OnInit, EventEmitter} from '@angular/core';
+import { BehaviorSubject } from 'rxjs'
 
 @Component({
     selector: 'pagination',
@@ -14,9 +15,17 @@ export class PaginationComponent implements OnInit {
     showFrom: number;
     showBefore: number;
     private selectedPart = 0;
+    private selectedPartSubject: BehaviorSubject<number>;
 
 
     ngOnInit() {
+        this.selectedPartSubject = new BehaviorSubject(0);
+        this.selectedPartSubject.subscribe({
+            next: (v) => {
+                this.selectedPart = v;
+            }
+        });
+
         this.parts = Math.ceil(this.amount / this.n);
         let arr = Array(this.parts).fill(0);
         arr.forEach(function (elem, index) {
@@ -40,20 +49,20 @@ export class PaginationComponent implements OnInit {
     }
 
     changePage(pageNumber) {
-        this.selectedPart = pageNumber - 1;
+        this.selectedPartSubject.next(pageNumber - 1);
         this.setGap();
     }
 
     prevPage() {
         if (this.selectedPart) {
-            this.selectedPart -= 1;
+            this.selectedPartSubject.next(this.selectedPart - 1);
             this.setGap();
         }
     }
 
     nextPage() {
         if (this.selectedPart < this.parts - 1) {
-            this.selectedPart += 1;
+            this.selectedPartSubject.next(this.selectedPart + 1);
             this.setGap();
         }
     }

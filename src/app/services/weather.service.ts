@@ -14,9 +14,9 @@ export class WeatherService {
     getWeather(lat, lng): Promise <AllWeather> {
         let url: string;
 
-        url = 'http://api.openweathermap.org/data/2.5/find?lat=' + lat + '&lon=' + lng + '&cnt=50&APPID=56a49954299e7f448920290ffc21d018';
+        // url = 'http://api.openweathermap.org/data/2.5/find?lat=' + lat + '&lon=' + lng + '&cnt=50&APPID=56a49954299e7f448920290ffc21d018';
 
-        //url = './../data/test.json';
+        url = './../data/test.json';
 
         return this.http.get(url).toPromise().then(response => response.json()).catch(this.handleError);
     }
