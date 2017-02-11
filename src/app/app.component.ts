@@ -2,14 +2,19 @@ import {Component, NgZone} from '@angular/core';
 
 @Component({
     selector: 'app-root',
-    templateUrl: './home.component.html'
+    templateUrl: 'app.component.html'
 })
 
 export class HomeComponent {
+    wolves = 0;
 
     constructor(private ngZone: NgZone){
         //this.ngZone.onStable.subscribe(this.onZoneStable);
         //this.ngZone.onUnstable.subscribe(this.onZoneUnstable);
+    }
+
+    inc(i: number) {
+        this.wolves = Math.min(5, Math.max(0, this.wolves + i));
     }
 
     //onZoneStable(){

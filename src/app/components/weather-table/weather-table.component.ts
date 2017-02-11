@@ -1,10 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { WeatherService } from '../services/weather.service';
-import AllWeather from '../interfaces/weather/all-weather';
+import { WeatherService } from '@app/services/weather.service';
+import AllWeather from '@app/interfaces/weather/all-weather';
 
 @Component({
     selector: 'weather-table',
-    templateUrl: './weather-table.component.html'
+    templateUrl: 'weather-table.component.html'
 })
 export class WeatherTableComponent implements OnInit {
     @Input() lat: number;

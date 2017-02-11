@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import AllWeather from './../interfaces/weather/all-weather';
-import { KelvinToCelsiusPipe } from '../pipes/kelvin-to-celsius.pipe.ts';
+import { KelvinToCelsiusPipe } from '../pipes/kelvin-to-celsius.pipe';
 
 import 'rxjs/add/operator/toPromise'
 

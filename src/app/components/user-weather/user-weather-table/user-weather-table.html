@@ -1,5 +1,5 @@
-<table>
-    <thead *ngIf="cities.size">
+<table *ngIf="cities">
+    <thead *ngIf="cities.length > 0">
         <tr>
             <th></th>
             <th>City</th>
@@ -15,11 +15,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr class="vertical-align" oneCityWeather *ngFor="let cityData of cities.toJS(); let i=index" [city]="cityData.city" [favorite]="cityData.favorite"
-            (onToggleFavorite)='toggleFavorite($event)'
-            (onRemove)="remove($event)"
-            [index]="i"
-            [colorDetector]="cityData.city.main.temp | kelvinToCelsius"
+        <tr class="vertical-align" oneCityWeather *ngFor="let cityData of cities" [city]="cityData" [colorDetector]="cityData.main.temp | kelvinToCelsius"
         ></tr>
     </tbody>
 </table>

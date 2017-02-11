@@ -1,8 +1,7 @@
-<script src="../../../main.ts"></script>
 <template [ngIf]="city">
     <td class="favorite">
-        <span *ngIf="favorite" (click)="toggleFavorite()">&#9733;</span>
-        <span *ngIf="!favorite" (click)="toggleFavorite()">&#9734;</span>
+        <span *ngIf="city.favorite" (click)="toggleFavorite()">&#9733;</span>
+        <span *ngIf="!city.favorite" (click)="toggleFavorite()">&#9734;</span>
     </td>
     <td favoriteCity="favorite">{{city.name}}</td>
     <td>

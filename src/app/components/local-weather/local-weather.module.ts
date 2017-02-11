@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { LocalWeatherComponent } from './local-weather.component';
-import { WeatherService } from '../services/weather.service';
+import { WeatherService } from '@app/services/weather.service';
 import { WeatherTableComponent } from '../weather-table/weather-table.component';
-import { PaginationComponent } from '../components/pagination/pagination.component';
+import { PaginationComponent } from '@app/common/pagination/pagination.component';
 import { AgmCoreModule } from 'angular2-google-maps/core/core-module';
 
 

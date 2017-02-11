@@ -3,7 +3,7 @@ import { DecimalPipe } from '@angular/common';
 
 @Component({
     selector: 'local-weather',
-    templateUrl: './local-weather.component.html',
+    templateUrl: 'local-weather.component.html',
 })
 
 export class LocalWeatherComponent implements OnInit {

@@ -1,5 +1,6 @@
 <div *ngIf="!(allWeather||dataError)"  class = "loading">
     <h6>Please, wait for weather data</h6>
+
     <div class="cssload-dots">
         <div class="cssload-dot"></div>
         <div class="cssload-dot"></div>
@@ -19,6 +20,7 @@
     </svg>
 </div>
 <div *ngIf="allWeather">
+    <!--<span>{{allWeather | json}}</span>-->
     <table class="weatherTable">
         <thead>
         <tr>

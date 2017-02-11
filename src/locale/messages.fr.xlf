@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="ng2.template">
+        <body>
+            <trans-unit id="fd529467c3c71133f38132bbc64699f90160f75f" datatype="html">
+                <source>Minsk suburbs weather</source>
+                <target>Météo à Minsk suburbs</target>
+                <note priority="1" from="description">An introduction header for this sample</note>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

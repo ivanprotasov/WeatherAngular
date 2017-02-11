@@ -1,5 +1,4 @@
 import {Component, Input, Output, EventEmitter, ChangeDetectionStrategy} from "@angular/core";
-import {List} from "immutable";
 
 @Component({
     selector: 'userWeatherTable',
@@ -9,15 +8,5 @@ import {List} from "immutable";
 })
 
 export class UserWeatherTableComponent {
-    @Input() cities: List<{}>;
-    @Output() onToggleFavorite = new EventEmitter();
-    @Output() onRemove = new EventEmitter();
-
-    toggleFavorite($event){
-        this.onToggleFavorite.emit($event);
-    }
-
-    remove($event){
-        this.onRemove.emit($event);
-    }
+    @Input() cities: Array<{}>;
 }

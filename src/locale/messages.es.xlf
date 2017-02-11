@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="ng2.template">
+        <body>
+            <trans-unit id="fd529467c3c71133f38132bbc64699f90160f75f" datatype="html">
+                <source>Minsk suburbs weather</source>
+                <target>Tiempo en los suburbios de Minsk</target>
+                <note priority="1" from="description">An introduction header for this sample</note>
+            </trans-unit>
+            <trans-unit id="6e22e74e8cbd3095560cfe08993c4fdfa3c50eb0" datatype="html">
+                <source/>
+                <target/>
+            </trans-unit>
+            <trans-unit id="f9826667fdc730f1235e712ff3701914a2a520ac" datatype="html">
+                <source/>
+                <target>{wolves, plural, =0 {ningún lobo} =1 {un lobo} =2 {dos lobos} other {una horda de lobos}}</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
