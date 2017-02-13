@@ -16,22 +16,22 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { userWeatherReducer } from './reducers/user-weather.reducer';
 
-const appRoutes: Routes = [
-    { path: 'local-weather', component: LocalWeatherComponent },
-    { path: 'user-weather', component: UserWeatherComponent },
-    { path: 'contacts', component: ContactsComponent },
-    { path: '', component: LocalWeatherComponent }
+let routes: Routes = [
+  { path: 'local-weather', component: LocalWeatherComponent },
+  { path: 'user-weather', component: UserWeatherComponent },
+  { path: 'contacts', component: ContactsComponent },
+  { path: '', component: LocalWeatherComponent }
 ];
 
 @NgModule({
     declarations: [
-        HomeComponent
+        HomeComponent,
     ],
     imports: [
         BrowserModule,
         FormsModule,
         HttpModule,
-        RouterModule.forRoot(appRoutes),
+        RouterModule.forRoot(routes),
         LocalWeatherModule,
         UserWeatherModule,
         ContactsModule,

@@ -34,9 +34,9 @@ export class UserWeatherComponent  implements OnInit {
     addItem(city: string) {
         let cityData = Observable.fromPromise(this.userWeatherService.getWeather(city));
         cityData.subscribe(
-            (cityData) => {
-                this.store.dispatch(this.userWeatherActions.addItem(cityData));
-            }
+          (cityData) => {
+            this.store.dispatch(this.userWeatherActions.addItem(cityData));
+          }
         );
     }
 }
