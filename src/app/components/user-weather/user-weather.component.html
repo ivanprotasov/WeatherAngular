@@ -1,9 +1,16 @@
 <div class="alert alert-warning">
-    <span>Please, input a city:</span>
-  <div class="form-group row">
-    <input type="text" #box class="form-control col-4 ">
-    <button class="btn btn-primary" (click)="addItem(box.value)">OK</button>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="input-group">
+        <input type="text" #box class="form-control" placeholder="Search for city...">
+        <span class="input-group-btn">
+        <button class="btn btn-primary" (click)="addItem(box.value)">Search</button>
+      </span>
+      </div>
+    </div>
+    <div class="col-sm-6 clearfix">
+      <lastUpdate [lastUpdate]="lastUpdate"></lastUpdate>
+    </div>
   </div>
-  <lastUpdate [lastUpdate]="lastUpdate"></lastUpdate>
 </div>
 <userWeatherTable  [cities]="cities | async "></userWeatherTable>

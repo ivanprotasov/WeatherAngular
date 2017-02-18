@@ -13,7 +13,7 @@ export class UserWeatherEffects {
     @Effect() addItemAsync$ = this.actions$
         .ofType(UserWeatherActions.ADD_ITEM_ASYNC)
         .map(action => action.payload)
-        .switchMap((payload) =>this.userWeatherService.getWeather(payload.cityData))
+        .flatMap((payload) =>this.userWeatherService.getWeather(payload.cityData))
         .map(res =>((new UserWeatherActions).addItem(res)))
         .catch(() => Observable.of({ type: 'LOGIN_FAILED' }));
 }

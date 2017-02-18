@@ -6,7 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { LocalWeatherComponent } from './components/local-weather/local-weather.component';
 import { WeatherService } from './services/weather.service';
-import { HomeComponent } from './app.component';
+import { AppComponent } from './app.component';
 import { LocalWeatherModule } from './components/local-weather/local-weather.module';
 import { UserWeatherComponent } from './components/user-weather/user-weather.component';
 import { UserWeatherModule } from './components/user-weather/user-weather.module';
@@ -25,7 +25,7 @@ let routes: Routes = [
 
 @NgModule({
     declarations: [
-        HomeComponent,
+        AppComponent,
     ],
     imports: [
         BrowserModule,
@@ -43,7 +43,7 @@ let routes: Routes = [
         })
     ],
     providers: [WeatherService],
-    bootstrap: [HomeComponent]
+    bootstrap: [AppComponent]
 })
-export class HomeModule {
+export class AppModule {
 }

@@ -5,7 +5,7 @@ import {Component, NgZone} from '@angular/core';
     templateUrl: 'app.component.html'
 })
 
-export class HomeComponent {
+export class AppComponent {
     wolves = 0;
 
     constructor(private ngZone: NgZone){
