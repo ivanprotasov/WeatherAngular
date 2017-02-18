@@ -19,7 +19,8 @@ export class LastUpdateComponent {
     }
 
     ngOnChanges() {
-
         this.milliseconds = this.lastUpdate.getMilliseconds();
     }
 }
+
+
