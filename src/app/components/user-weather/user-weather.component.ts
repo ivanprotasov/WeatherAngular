@@ -1,6 +1,5 @@
 import { Component, OnInit} from '@angular/core';
 import { LocalStorageService } from '@app/services/local-storage.service';
-import { UserWeatherService } from 'app/services/user-weather.service';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { UserWeatherActions } from 'app/actions/user-weather.actions';
@@ -17,7 +16,6 @@ export class UserWeatherComponent  implements OnInit {
     lastUpdate: Date;
 
     constructor(private localStorageService: LocalStorageService,
-                private userWeatherService: UserWeatherService,
                 private userWeatherActions: UserWeatherActions,
                 private store: Store<any>)
                 {
@@ -32,11 +30,6 @@ export class UserWeatherComponent  implements OnInit {
     }
 
     addItem(city: string) {
-        let cityData = Observable.fromPromise(this.userWeatherService.getWeather(city));
-        cityData.subscribe(
-            (cityData) => {
-                this.store.dispatch(this.userWeatherActions.addItem(cityData));
-            }
-        );
+        this.store.dispatch(this.userWeatherActions.addItemAsync(city));
     }
 }

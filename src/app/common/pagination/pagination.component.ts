@@ -15,12 +15,12 @@ export class PaginationComponent implements OnInit {
     showFrom: number;
     showBefore: number;
     private selectedPart = 0;
-    private selectedPartSubject: BehaviorSubject<number>;
+    private selectedPartSubject$: BehaviorSubject<number>;
 
 
     ngOnInit() {
-        this.selectedPartSubject = new BehaviorSubject(0);
-        this.selectedPartSubject.subscribe({
+        this.selectedPartSubject$ = new BehaviorSubject(0);
+        this.selectedPartSubject$.subscribe({
             next: (v) => {
                 this.selectedPart = v;
             }
@@ -49,20 +49,20 @@ export class PaginationComponent implements OnInit {
     }
 
     changePage(pageNumber) {
-        this.selectedPartSubject.next(pageNumber - 1);
+        this.selectedPartSubject$.next(pageNumber - 1);
         this.setGap();
     }
 
     prevPage() {
         if (this.selectedPart) {
-            this.selectedPartSubject.next(this.selectedPart - 1);
+            this.selectedPartSubject$.next(this.selectedPart - 1);
             this.setGap();
         }
     }
 
     nextPage() {
         if (this.selectedPart < this.parts - 1) {
-            this.selectedPartSubject.next(this.selectedPart + 1);
+            this.selectedPartSubject$.next(this.selectedPart + 1);
             this.setGap();
         }
     }

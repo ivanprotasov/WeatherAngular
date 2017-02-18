@@ -12,7 +12,9 @@ import { LastUpdateComponent } from './last-update/last-update.component';
 import { ColorDetector } from '@app/directives/color-detector.directive';
 import { WindDirectionPresenter } from '@app/directives/wind-direction-presenter.directive';
 import { FavoriteCity } from '@app/directives/favorite-city.derective';
-import {UserWeatherActions} from "@app/actions/user-weather.actions";
+import { UserWeatherActions } from "@app/actions/user-weather.actions";
+import { EffectsModule } from "@ngrx/effects";
+import { UserWeatherEffects } from "@app/effects/user-weather.effects";
 
 @NgModule({
     declarations: [
@@ -27,7 +29,8 @@ import {UserWeatherActions} from "@app/actions/user-weather.actions";
     ],
     imports: [
         BrowserModule,
-        Angular2FontawesomeModule
+        Angular2FontawesomeModule,
+        EffectsModule.run(UserWeatherEffects)
     ],
     providers: [
         UserWeatherService,

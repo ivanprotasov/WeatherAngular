@@ -6,6 +6,7 @@ import { Action } from "@ngrx/store";
 export class UserWeatherActions {
     public static RESET_ITEMS: string  = '[USER_WEATHER] RESET_ITEMS';
     public static ADD_ITEM: string  = '[USER_WEATHER] ADD_ITEM';
+    public static ADD_ITEM_ASYNC: string  = '[USER_WEATHER] ADD_ITEM_ASYNC';
     public static TOGGLE_FAVORITE: string  = '[USER_WEATHER] TOGGLE_FAVORITE';
     public static REMOVE_ITEM: string  = '[USER_WEATHER] REMOVE_ITEM';
 
@@ -21,6 +22,15 @@ export class UserWeatherActions {
     public addItem(cityData): Action {
         return {
             type: UserWeatherActions.ADD_ITEM,
+            payload: {
+                cityData: cityData
+            }
+        };
+    }
+
+    public addItemAsync(cityData): Action {
+        return {
+            type: UserWeatherActions.ADD_ITEM_ASYNC,
             payload: {
                 cityData: cityData
             }
